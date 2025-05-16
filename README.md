@@ -12,8 +12,7 @@
 
 - HTML5 semántico
 - CSS3 (Flexbox, Grid, Animaciones, Transiciones)
-- Metodologías: **BEM**, OOCSS
-- Accesibilidad web (WAI-ARIA)
+- Metodologías: **BEM**
 - SEO básico
 - Responsive Design (Mobile First)
 

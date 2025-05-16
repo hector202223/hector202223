@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Visualizador HTML con pestañas</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+.visualizador{
+border: solid 2px #666;
+}
+
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+    }
+
+    header {
+      background: #007acc;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      background: #eee;
+    }
+
+    .tab {
+      padding: 1rem 2rem;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+    }
+
+    .tab.active {
+      border-bottom: 3px solid #007acc;
+      font-weight: bold;
+      background: #fff;
+    }
+
+    .panel {
+      display: none;
+      padding: 1.5rem;
+
+    }
+
+    .panel.active {
+      display: block;
+    }
+
+    textarea {
+      width: 100%;
+      height: 300px;
+      font-family: monospace;
+      font-size: 1rem;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      resize: vertical;
+      background: #fff;
+    }
+
+    button {
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      background: #007acc;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    iframe {
+      width: 100%;
+      height: 350px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: white;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🧪 Visualizador de HTML</h1>
+  </header>
+
+  <div class="tabs">
+    <div class="tab active" onclick="mostrarTab('editor')">Editor</div>
+    <div class="tab" onclick="mostrarTab('preview')">Vista previa</div>
+  </div>
+
+  <div id="editor" class="panel active">
+    <textarea id="editorTextarea" placeholder="Escribí tu código HTML aquí..."></textarea>
+    <button onclick="verHTML()">Ver HTML</button>
+  </div>
+
+  <div id="preview" class="panel">
+    <iframe id="previewIframe" class="visualizador"></iframe>
+  </div>
+
+  <script>
+    function mostrarTab(id) {
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.panel').forEach(panel => panel.classList.remove('active'));
+
+      document.querySelector(`.tab[onclick*="${id}"]`).classList.add('active');
+      document.getElementById(id).classList.add('active');
+    }
+
+    function verHTML() {
+      const html = document.getElementById("editorTextarea").value;
+      const iframe = document.getElementById("previewIframe");
+      iframe.srcdoc = html;
+      mostrarTab('preview');
+    }
+  </script>
+</body>
+</html>

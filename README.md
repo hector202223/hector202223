@@ -34,7 +34,7 @@ Además de estudiar y practicar constantemente, también desarrollo herramientas
 
 ## 👉 [Probar el visualizador ahora](https://hector202223.github.io/hector202223/visualizador-manual-avanzado.html)
 
-![visualizador](visualizador.jpg)
+![visualizador](https://raw.githubusercontent.com/hector202223/hector202223/refs/heads/Holaa/visualizador.jpg)
 
 ---
 

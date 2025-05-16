@@ -1,68 +1,74 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Visualizador HTML</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 2rem;
-      background: #f9f9f9;
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-
-    textarea {
-      width: 100%;
-      height: 200px;
-      font-family: monospace;
-      font-size: 1rem;
-      padding: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      resize: vertical;
-    }
-
-    button {
-      display: block;
-      margin: 1rem auto;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      border: none;
-      background: #007acc;
-      color: white;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    iframe {
-      width: 100%;
-      height: 300px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      margin-top: 1rem;
-      background: white;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Visualizador HTML desde GitHub</title>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 900px; margin: auto; padding: 1rem; }
+  textarea { width: 100%; height: 200px; margin-top: 1rem; font-family: monospace; }
+  iframe { width: 100%; height: 400px; margin-top: 1rem; border: 1px solid #ccc; }
+</style>
 </head>
 <body>
-  <h1>🧪 Visualizador de HTML</h1>
 
-  <textarea id="editor" placeholder="Escribí tu código HTML aquí..."></textarea>
-  <button onclick="verHTML()">Ver HTML</button>
+<h1>Visualizador HTML desde GitHub</h1>
+<p>Ejemplo: escribe la ruta del archivo en GitHub con formato <code>usuario/repositorio/rama/ruta/al/archivo.html</code></p>
 
-  <iframe id="preview"></iframe>
+<input type="text" id="filePath" placeholder="hector202223/mi-repo/main/index.html" style="width: 100%; padding: 0.5rem;" />
+<button id="loadBtn">Cargar archivo</button>
 
-  <script>
-    function verHTML() {
-      const html = document.getElementById("editor").value;
-      const iframe = document.getElementById("preview");
-      iframe.srcdoc = html;
+<h2>Código HTML:</h2>
+<textarea id="code" readonly></textarea>
+
+<h2>Vista renderizada:</h2>
+<iframe id="preview"></iframe>
+
+<script>
+  const loadBtn = document.getElementById('loadBtn');
+  const filePathInput = document.getElementById('filePath');
+  const codeArea = document.getElementById('code');
+  const previewFrame = document.getElementById('preview');
+
+  loadBtn.addEventListener('click', async () => {
+    const path = filePathInput.value.trim();
+    if (!path) return alert('Por favor ingresa la ruta del archivo.');
+
+    // Parsear la ruta
+    // Formato: usuario/repositorio/rama/ruta/al/archivo.html
+    const parts = path.split('/');
+    if (parts.length < 4) return alert('Ruta inválida. Debe ser usuario/repositorio/rama/ruta/al/archivo.html');
+
+    const [user, repo, branch, ...fileParts] = parts;
+    const filePath = fileParts.join('/');
+
+    // URL API GitHub para contenido de archivo
+    const apiURL = `https://api.github.com/repos/${user}/${repo}/contents/${filePath}?ref=${branch}`;
+
+    try {
+      const response = await fetch(apiURL);
+      if (!response.ok) throw new Error(`Error al obtener archivo: ${response.status}`);
+
+      const data = await response.json();
+
+      // El contenido viene en base64
+      const content = atob(data.content.replace(/\n/g, ''));
+
+      // Mostrar código en textarea
+      codeArea.value = content;
+
+      // Mostrar código renderizado en iframe
+      const blob = new Blob([content], { type: 'text/html' });
+      const url = URL.createObjectURL(blob);
+      previewFrame.src = url;
+
+    } catch (error) {
+      alert(error.message);
+      codeArea.value = '';
+      previewFrame.src = '';
     }
-  </script>
+  });
+</script>
+
 </body>
 </html>

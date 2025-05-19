@@ -1,1 +1,1 @@
-## [tabla moderba](https://hector202223.github.io/tablamoderna.html)
+## [tabla moderna](https://hector202223.github.io/tablamoderna.html)

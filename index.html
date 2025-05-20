@@ -1,37 +1,88 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SPA con Barra Fija</title>
-    <style>
-      body {      margin: 0;      font-family: sans-serif;    }
-      header {      background-color: #333;      color: white;      padding: 1em;      position: fixed;      top: 0;      width: 100%;      z-index: 1000;    }
-      nav {      display: none;      background-color: #444;      position: absolute;      top: 100%;      left: 0;      width: 100%;    }
-      nav a {      display: block;      padding: 1em;      color: white;      text-decoration: none;    }
-      nav a:hover {      background-color: #555;    }
-      .menu-toggle {      cursor: pointer;    }
-      .show-menu nav {      display: block;    }
-      #content {      padding: 6em 1em 2em;    }
-    </style>
-  </head>
-  <body>
-    <header>
-      <div class="menu-toggle" onclick="toggleMenu()">☰ Menú</div>
-      <nav id="navbar">
-        <a href="#" onclick="loadPage('01-pagina.html')">Página 1</a>
-        <a href="#" onclick="loadPage('02-pagina.html')">Página 2</a>
-        <a href="#" onclick="loadPage('03-pagina.html')">Página 3</a>
-        <a href="#" onclick="loadPage('04-pagina.html')">Página 4</a>
-        <a href="#" onclick="loadPage('05-pagina.html')">Página 5</a>
-      </nav>
-    </header>
-    <main id="content">
-      <p>Bienvenido. Selecciona una página desde el menú.</p>
-    </main>
-    <script>
-      function toggleMenu() {      document.body.classList.toggle("show-menu");    }
-      function loadPage(url) {      fetch(url)        .then(response => response.text())        .then(html => {          document.getElementById("content").innerHTML = html;          document.body.classList.remove("show-menu");        })        .catch(err => {          document.getElementById("content").innerHTML = "<p>Error cargando la página.</p>";        });    }
-    </script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sitio SPA</title>
+  <style>
+    .spaui-header {
+      background-color: #222;
+      color: #fff;
+      padding: 1em;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 9999;
+    }
+
+    .spaui-toggle {
+      cursor: pointer;
+      font-size: 1.2em;
+    }
+
+    .spaui-nav {
+      display: none;
+      background-color: #333;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+    }
+
+    .spaui-nav a {
+      display: block;
+      padding: 1em;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .spaui-nav a:hover {
+      background-color: #444;
+    }
+
+    .spaui-show .spaui-nav {
+      display: block;
+    }
+
+    .spaui-content {
+      padding: 6em 1em 2em;
+    }
+  </style>
+</head>
+<body>
+  <div class="spaui-header">
+    <div class="spaui-toggle" onclick="spauiToggleMenu()">☰ Menú</div>
+    <div class="spaui-nav" id="spaui-navbar">
+      <a href="#" onclick="spauiLoadPage('01-pagina.html')">Página 1</a>
+      <a href="#" onclick="spauiLoadPage('02-pagina.html')">Página 2</a>
+      <a href="#" onclick="spauiLoadPage('03-pagina.html')">Página 3</a>
+      <a href="#" onclick="spauiLoadPage('04-pagina.html')">Página 4</a>
+      <a href="#" onclick="spauiLoadPage('05-pagina.html')">Página 5</a>
+    </div>
+  </div>
+
+  <div class="spaui-content" id="spaui-content">
+    <p>Bienvenido. Selecciona una página desde el menú.</p>
+  </div>
+
+  <script>
+    function spauiToggleMenu() {
+      document.body.classList.toggle('spaui-show');
+    }
+
+    function spauiLoadPage(url) {
+      fetch(url)
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('spaui-content').innerHTML = html;
+          document.body.classList.remove('spaui-show');
+          window.scrollTo(0, 0);
+        })
+        .catch(() => {
+          document.getElementById('spaui-content').innerHTML = "<p>Error cargando el contenido.</p>";
+        });
+    }
+  </script>
+</body>
 </html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPA con Barra Fija</title>
+    <style>
+      body {      margin: 0;      font-family: sans-serif;    }
+      header {      background-color: #333;      color: white;      padding: 1em;      position: fixed;      top: 0;      width: 100%;      z-index: 1000;    }
+      nav {      display: none;      background-color: #444;      position: absolute;      top: 100%;      left: 0;      width: 100%;    }
+      nav a {      display: block;      padding: 1em;      color: white;      text-decoration: none;    }
+      nav a:hover {      background-color: #555;    }
+      .menu-toggle {      cursor: pointer;    }
+      .show-menu nav {      display: block;    }
+      #content {      padding: 6em 1em 2em;    }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="menu-toggle" onclick="toggleMenu()">☰ Menú</div>
+      <nav id="navbar">
+        <a href="#" onclick="loadPage('01-pagina.html')">Página 1</a>
+        <a href="#" onclick="loadPage('02-pagina.html')">Página 2</a>
+        <a href="#" onclick="loadPage('03-pagina.html')">Página 3</a>
+        <a href="#" onclick="loadPage('04-pagina.html')">Página 4</a>
+        <a href="#" onclick="loadPage('05-pagina.html')">Página 5</a>
+      </nav>
+    </header>
+    <main id="content">
+      <p>Bienvenido. Selecciona una página desde el menú.</p>
+    </main>
+    <script>
+      function toggleMenu() {      document.body.classList.toggle("show-menu");    }
+      function loadPage(url) {      fetch(url)        .then(response => response.text())        .then(html => {          document.getElementById("content").innerHTML = html;          document.body.classList.remove("show-menu");        })        .catch(err => {          document.getElementById("content").innerHTML = "<p>Error cargando la página.</p>";        });    }
+    </script>
+  </body>
+</html>

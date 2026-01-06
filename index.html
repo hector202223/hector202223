@@ -1,100 +1,191 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sitio SPA sin colisiones</title>
-  <style>
-    .spaui-body {
-      margin: 0;
-      font-family: sans-serif;
-    }
+    <meta charset="UTF-8">
+    <title>Héctor Mamani | Portfolio</title>
+    <style>
+        /* CSS PURO Y COMPATIBLE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .spaui-header {
-      background-color: #222;
-      color: #fff;
-      padding: 1em;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 9999;
-box-sizing:border-box;
-    }
+        body {
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            background-color: #ffffff;
+            color: #1a1a1a;
+        }
 
-    .spaui-toggle {
-      cursor: pointer;
-      font-size: 1.2em;
-    }
+        /* Cabecera con Degradado */
+        .header {
+            background: #0ea5e9;
+            background: linear-gradient(135deg, #0ea5e9 0%, #a78bfa 100%);
+            padding: 60px 8%;
+            color: #ffffff;
+        }
 
-    .spaui-nav {
-      display: none;
-      background-color: #333;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-    }
+        .avatar {
+            width: 120px;
+            height: 120px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            float: left;
+            margin-right: 30px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+        }
 
-    .spaui-nav a {
-      display: block;
-      padding: 1em;
-      color: #fff;
-      text-decoration: none;
-box-sizing:border-box;
-    }
+        .nombre {
+            font-size: 70px;
+            font-weight: 900;
+            line-height: 0.8;
+            text-transform: uppercase;
+            letter-spacing: -3px;
+        }
 
-    .spaui-nav a:hover {
-      background-color: #444;
-    }
+        .subtitulo {
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-top: 15px;
+        }
 
-    .spaui-show .spaui-nav {
-      display: block;
-    }
+        /* Contenedor Principal */
+        .main-content {
+            padding: 60px 8%;
+            max-width: 1200px;
+        }
 
-    .spaui-content {
-      padding: 4rem 0 0;
-    }
-  </style>
+        /* Títulos de sección */
+        .titulo-seccion {
+            font-size: 40px;
+            font-weight: 900;
+            color: #0f172a;
+            margin-bottom: 25px;
+            letter-spacing: -1px;
+            border-left: 10px solid #7dd3fc;
+            padding-left: 20px;
+        }
+
+        .parrafo {
+            font-size: 28px;
+            font-weight: 300;
+            color: #334155;
+            line-height: 1.3;
+            margin-bottom: 60px;
+        }
+
+        /* --- ESTILO STACK IGUAL A LA IMAGEN --- */
+        .stack-box {
+            margin-bottom: 60px;
+            border-top: 1px solid #f1f5f9; /* Línea superior inicial */
+        }
+
+        .stack-item {
+            display: block;
+            padding: 20px 0;
+            border-bottom: 1px solid #f1f5f9; /* Líneas entre elementos */
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .stack-icon {
+            font-size: 28px;
+            color: #0ea5e9;
+            margin-right: 15px;
+            display: inline-block;
+            vertical-align: middle;
+            font-family: monospace;
+            font-weight: bold;
+        }
+
+        .stack-texto {
+            font-size: 20px;
+            font-weight: 900;
+            display: inline-block;
+            vertical-align: middle;
+            color: #1a1a1a;
+        }
+
+        /* Proyectos y Contacto */
+        .footer-line {
+            NADAborder-top: 4px solid #f1f5f9;
+            NADApadding-top: 40px;
+            NADAmargin-top: 40px;
+        }
+
+        .texto-proyecto {
+            font-size: 28px;
+            font-weight: 900;
+        
+            color: #1e293b;
+        }
+
+        .sub-proyecto {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            letter-spacing: 2px;
+            padding-bottom:10px;
+        }
+
+
+        .boton-contacto:hover {
+            background-color: #0ea5e9;
+            color: #ffffff;
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
 </head>
-<body class="spaui-body">
-  <div class="spaui-header">
-    <div class="spaui-toggle" onclick="spauiToggleMenu()">☰ Menú</div>
-    <div class="spaui-nav" id="spaui-navbar">
-      <a href="#" onclick="spauiLoadPage('01-pagina.html')">Página 1 - landing page</a>
-      <a href="#" onclick="spauiLoadPage('02-pagina.html')">Página 2 - tabla moderna</a>
-      <a href="#" onclick="spauiLoadPage('03-pagina.html')">Página 3 - visualizador html</a>
-      <a href="#" onclick="spauiLoadPage('04-pagina.html')">Página 4 - puntuacion</a>
-      <a href="#" onclick="spauiLoadPage('05-pagina.html')">Página 5 - reseña</a>
+<body>
+
+    <div class="header clearfix">
+        <div class="avatar">
+            <img src="foto.jpg" alt="HM" style="width:100%; height:100%; border-radius:50%; object-fit:cover;">
+        </div>
+        <div style="float:left;">
+            <h1 class="nombre">HÉCTOR<br>MAMANI</h1>
+            <p class="subtitulo">Analista de datos</p>
+        </div>
     </div>
-  </div>
 
-  <div class="spaui-content" id="spaui-content">
-    <p></p>
-  </div>
-
-  <script>
-    function spauiToggleMenu() {
-      document.body.classList.toggle('spaui-show');
-    }
-
-    function spauiLoadPage(url) {
-      fetch(url)
-        .then(response => response.text())
-        .then(html => {
-          document.getElementById('spaui-content').innerHTML = html;
-          document.body.classList.remove('spaui-show');
-          window.scrollTo(0, 0);
-        })
-        .catch(() => {
-          document.getElementById('spaui-content').innerHTML = "<p>Error cargando el contenido.</p>";
-        });
-    }
+    <div class="main-content">
+        
+        <div class="titulo-seccion">Sobre mí</div>
+        <p class="parrafo">
+            Me apasiona el análisis de datos para descubrir patrones. Especializado en Python, diseño soluciones que transforman información cruda en presentacion de datos<br>
+            <br>
+            <b>Herramientas que utilizo:</b><br>            
+                <span >&gt; Python (Pandas / Matplotlib)</span><br>
+                <span >* Google Colab</span>
+          
+        </p>
 
 
-window.addEventListener('DOMContentLoaded', () => {
-  spauiLoadPage('01-pagina.html');
-});
-  </script>
+
+
+         
+  
+
+        <div class="footer-line">
+            <div class="titulo-seccion">Proyectos</div>
+            <div class="texto-proyecto">* Informe de ventas</div>
+             
+        </div>
+        <br>
+        <br>
+        <br>
+<hr>
+<br>
+        <div class="sub-proyecto">CERTIFICACIÓN OFICIAL MIN. EDUCACIÓN</div>
+ <div class="sub-proyecto">CONTACTAR: aa@gmail.com</div>
+    </div>
+
 </body>
 </html>

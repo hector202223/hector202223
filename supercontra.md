@@ -4,7 +4,7 @@ title: Mis Artículos
 paginate: true
 ---
 
-## Artículos detectados:
+## Artículos detectados ok:
 
 <ul>
   {% for post in paginator.posts %}

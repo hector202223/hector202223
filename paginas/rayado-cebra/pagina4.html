@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualización de Datos | Zebra Striping Profesional</title>
+    <style>
+        :root {
+            --zebra-soft: #f1f3f1; /* Verde grisáceo muy tenue */
+            --brand-main: #2ecc71; /* Verde esmeralda profesional */
+            --text-color: #2c3e50;
+            --bg-page: #fdfbf7;    /* Crema suave para descansar la vista */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-color);
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .product-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-top: 0;
+            color: #1a1a1a;
+            border-bottom: 3px solid var(--brand-main);
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        /* --- EXPLICACIÓN DEL PRODUCTO --- */
+        .description-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .info-block h3 {
+            color: var(--brand-main);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .info-block p {
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        /* --- LA TABLA (EL PRODUCTO EN ACCIÓN) --- */
+        .table-preview {
+            margin: 40px 0;
+        }
+
+        .zebra-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1.1rem;
+            border: 1px solid #eee;
+        }
+
+        .zebra-table th {
+            background-color: #34495e;
+            color: white;
+            padding: 18px;
+            text-align: left;
+        }
+
+        .zebra-table td {
+            padding: 18px;
+        }
+
+        /* EL RAYADO DE CEBRA: EL PRODUCTO FINAL */
+        .zebra-table tbody tr:nth-child(even) {
+            background-color: var(--zebra-soft);
+        }
+
+        .zebra-table tbody tr:hover {
+            background-color: #e8f8f0;
+            transition: 0.2s;
+        }
+
+        /* --- LLAMADA A LA ACCIÓN --- */
+        .cta-section {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+
+        .btn-contact {
+            display: inline-block;
+            background-color: var(--brand-main);
+            color: white;
+            padding: 18px 40px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .btn-contact:hover {
+            background-color: #27ae60;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 600px) {
+            .description-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="product-container">
+    <h1>El Método del Rayado de Cebra</h1>
+    
+    <div class="description-grid">
+        <div class="info-block">
+            <h3>¿Qué es y cómo está hecho?</h3>
+            <p>Es una técnica de diseño basada en <strong>selectores CSS avanzados</strong> (nth-child) que alterna tonalidades en las filas. Crea una guía visual matemática que evita que el ojo salte de línea accidentalmente.</p>
+        </div>
+        <div class="info-block">
+            <h3>¿Para qué es perfecto?</h3>
+            <p>Es la solución ideal para <strong>listados densos</strong> como inventarios, balances contables o catálogos de precios. Permite leer grandes volúmenes de datos sin cansancio visual.</p>
+        </div>
+    </div>
+
+    <div class="table-preview">
+        <table class="zebra-table">
+            <thead>
+                <tr>
+                    <th>Aplicación</th>
+                    <th>Volumen de Datos</th>
+                    <th>Resultado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Inventarios de Almacén</td>
+                    <td>+5,000 SKUs</td>
+                    <td>Control preciso</td>
+                </tr>
+                <tr>
+                    <td>Balances Financieros</td>
+                    <td>Anual / Mensual</td>
+                    <td>Lectura sin errores</td>
+                </tr>
+                <tr>
+                    <td>Listas de Suscriptores</td>
+                    <td>Bases de datos</td>
+                    <td>Gestión ágil</td>
+                </tr>
+                <tr>
+                    <td>Reportes de Logística</td>
+                    <td>Rutas diarias</td>
+                    <td>Orden absoluto</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="cta-section">
+        <p>¿Necesitas que tus datos sean fáciles de leer?</p>
+        <a href="mailto:tu-correo@empresa.com" class="btn-contact">Contratar Implementación</a>
+    </div>
+</div>
+
+</body>
+</html>

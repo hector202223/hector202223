@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Lista de Artículos
+title: Lista de Artículos x
 ---
 
 ## Mis publicaciones recientes:

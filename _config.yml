@@ -4,4 +4,4 @@ plugins:
   - jekyll-paginate
 
 paginate: 2
-paginate_path: "/supercontra/page:num/"
+paginate_path: "/subindex/page:num/"

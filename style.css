@@ -153,7 +153,7 @@ width:80%;
 .footer__texto {
   margin: 0;
 }
-
+.contacto__titulo{border-bottom: 2px solid var(--gris-suave);}
 .boton-menu{display: none}
 
 @media (max-width: 800px) {

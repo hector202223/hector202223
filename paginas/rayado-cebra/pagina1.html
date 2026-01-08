@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sección de Venta - Rayado de Cebra</title>
+    <style>
+        :root {
+            --primario: #2563eb;
+            --oscuro: #1e293b;
+            --claro: #f8fafc;
+            --cebra: #f1f5f9;
+        }
+
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #fff; color: var(--oscuro); line-height: 1.6; }
+
+        .cta-container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 40px;
+            border-radius: 20px;
+            background: var(--claro);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h2 { font-size: 2.5rem; color: var(--oscuro); margin-bottom: 10px; }
+        p.subtitle { font-size: 1.2rem; color: #64748b; margin-bottom: 30px; }
+
+        /* Estilo de la Tabla Cebra Premium */
+        .table-preview {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden; /* Para que las esquinas redondeadas funcionen */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .table-preview th {
+            background-color: var(--primario);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .table-preview td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e2e8f0;
+            color: #475569;
+        }
+
+        /* EL RAYADO DE CEBRA MAGICO */
+        .table-preview tr:nth-child(even) {
+            background-color: var(--cebra);
+        }
+
+        /* EFECTO HOVER PARA SEDUCIR */
+        .table-preview tr:hover {
+            background-color: #e0e7ff;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        /* BOTON DE LLAMADO A LA ACCIÓN */
+        .btn-contacto {
+            display: inline-block;
+            background: var(--primario);
+            color: white;
+            padding: 18px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 20px;
+        }
+
+        .btn-contacto:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+            background: #1d4ed8;
+        }
+
+        .mencion {
+            display: block;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+<section class="cta-container">
+    <h2>¿Tus clientes se pierden en tus datos?</h2>
+    <p class="subtitle">Implemento <b>Diseño de Lectura Guiada</b> para que tu información sea clara, rápida y profesional.</p>
+
+    <table class="table-preview">
+        <thead>
+            <tr>
+                <th>Producto / Servicio</th>
+                <th>Descripción</th>
+                <th>Precio Final</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Consultoría Web</td>
+                <td>Optimización de interfaz y tablas.</td>
+                <td>$150 USD</td>
+            </tr>
+            <tr>
+                <td>Maquetación HTML</td>
+                <td>Estructura limpia y cebra dinámico.</td>
+                <td>$80 USD</td>
+            </tr>
+            <tr>
+                <td>Mantenimiento</td>
+                <td>Actualización de datos mensuales.</td>
+                <td>$50 USD</td>
+            </tr>
+            <tr>
+                <td>Diseño Responsive</td>
+                <td>Adaptación para móviles y tablets.</td>
+                <td>$100 USD</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p><i>"El 80% de los usuarios abandona una web si la información es difícil de leer."</i></p>
+    
+    <a href="https://wa.me/TUNUMERO" class="btn-contacto">
+        ¡Quiero profesionalizar mi web hoy mismo!
+    </a>
+    <span class="mencion">Trabajo digno, honesto y de alta calidad.</span>
+</section>
+
+</body>
+</html>

@@ -1,7 +1,10 @@
 theme: jekyll-theme-minimal
-# IMPORTANTE: En GitHub Pages se usa 'plugins', pero a veces requiere esta lista:
+
+# Prueba poniendo ambos nombres para forzar la carga en GitHub
 plugins:
+  - jekyll-paginate
+gems:
   - jekyll-paginate
 
 paginate: 2
-paginate_path: "/subindex/page:num/"
+paginate_path: "/articulos/page:num/"

@@ -4,10 +4,10 @@ title: Mis Artículos
 paginate: true
 ---
 
-## Artículos detectados ok:
+## Artículos detectados ok 2:
 
 <ul>
-  {% for post in paginator.posts %}
+  {% for post in site.posts %}
     <li>
       <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
     </li>

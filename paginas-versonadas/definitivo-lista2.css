@@ -1,0 +1,124 @@
+/* RESET Y VARIABLES */
+:root {
+    --blanco-puro: #ffffff;
+    --azul-fuerte: #0046ad;
+    --negro-solido: #1a1a1b;
+    --borde-negro: #000000;
+    --resalte-cebra: #ffce00; /* Amarillo para contraste */
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--blanco-puro);
+    color: var(--negro-solido);
+}
+
+/* LAYOUT DASHBOARD */
+.interfaz-maestra {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: 100vh;
+}
+
+/* BARRA LATERAL (Sidebar) */
+.barra-lateral {
+    background-color: var(--negro-solido);
+    color: white;
+    padding: 30px 20px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+    border-bottom: 2px solid var(--azul-fuerte);
+    padding-bottom: 10px;
+}
+
+.logo span { color: var(--azul-fuerte); }
+
+.menu-rapido p {
+    font-size: 11px;
+    color: #555;
+    letter-spacing: 1px;
+}
+
+.link-maestro {
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    padding: 10px 0;
+    font-size: 14px;
+    border-bottom: 1px solid #333;
+}
+
+.link-maestro:hover { color: var(--blanco-puro); }
+
+/* CONTENIDO PRINCIPAL */
+.contenido-principal {
+    padding: 0;
+}
+
+.barra-superior {
+    padding: 20px 40px;
+    border-bottom: 1px solid #ddd;
+}
+
+.barra-superior h1 {
+    font-size: 18px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* GRILLA DE CATEGORÍAS */
+.grilla-proyectos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    padding: 40px;
+}
+
+.tarjeta-categoria {
+    border: 2px solid var(--borde-negro);
+    border-radius: 4px; /* Menos redondeado, más sólido */
+    overflow: hidden;
+}
+
+.encabezado-cat {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.encabezado-cat.portafolio { background-color: var(--azul-fuerte); }
+.encabezado-cat.cebra { background-color: var(--negro-solido); border-bottom: 4px solid var(--resalte-cebra); }
+
+.encabezado-cat h2 { margin: 0; font-size: 16px; text-transform: uppercase; }
+
+.contador { font-size: 12px; background: rgba(0,0,0,0.2); padding: 2px 8px; border-radius: 10px; }
+
+/* LISTADO DE ENLACES (Cuerpo) */
+.cuerpo-cat {
+    display: flex;
+    flex-direction: column;
+}
+
+.cuerpo-cat a {
+    padding: 15px 20px;
+    text-decoration: none;
+    color: var(--negro-solido);
+    border-bottom: 1px solid #eee;
+    font-weight: 600;
+}
+
+/* HOVER ESTÁTICO (Solo color, no movimiento) */
+.cuerpo-cat a:hover {
+    background-color: #f9f9f9;
+    color: var(--azul-fuerte);
+}

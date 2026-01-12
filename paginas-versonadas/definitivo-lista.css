@@ -1,0 +1,106 @@
+/* RESET PARA LIMPIEZA TOTAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blanco: #ffffff;
+    --texto: #111111;
+    --borde: #dddddd;
+    /* Colores de Categoría (Sutiles) */
+    --c-port: #e67e22;
+    --c-cebra: #27ae60;
+    --c-azul: #0052cc;
+    --c-master: #d32f2f;
+}
+
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background-color: var(--blanco);
+    color: var(--texto);
+    padding: 40px;
+}
+
+.main-header {
+    max-width: 1000px;
+    margin: 0 auto 50px auto;
+    border-bottom: 4px solid var(--texto);
+    padding-bottom: 10px;
+}
+
+.main-header h1 {
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+}
+
+.dashboard-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.category-group {
+    margin-bottom: 40px;
+}
+
+.group-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.links-grid {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--borde);
+}
+
+/* FILAS DE ENLACES */
+.row-link {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    text-decoration: none;
+    color: var(--texto);
+    font-weight: 500;
+    border-bottom: 1px solid var(--borde);
+    background-color: var(--blanco);
+}
+
+.row-link:last-child {
+    border-bottom: none;
+}
+
+/* NUMERACIÓN LATERAL */
+.row-link span {
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: var(--blanco);
+    background-color: #333;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-right: 20px;
+    min-width: 35px;
+    text-align: center;
+}
+
+/* IDENTIFICADORES DE COLOR (BORDE IZQUIERDO) */
+.port { border-left: 6px solid var(--c-port); }
+.cebra { border-left: 6px solid var(--c-cebra); }
+.azul { border-left: 6px solid var(--c-azul); }
+.master { border-left: 6px solid var(--c-master); }
+
+/* HOVER ESTÁTICO (Solo cambia el fondo suavemente) */
+.row-link:hover {
+    background-color: #f5f7fa;
+    color: #000;
+}
+
+/* ESTILO PARA LA LISTA MAESTRA (Destacado sutil) */
+.master:hover {
+    background-color: #fff5f5;
+}

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zebra Stripe Engineering | High Performance Data</title>
+    <style>
+        :root {
+            --neon: #39FF14;
+            --dark: #000000;
+            --glass: rgba(255, 255, 255, 0.03);
+            --text: #ffffff;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--text);
+            font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* --- SECCIÓN HERO --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .hero-tag {
+            color: var(--neon);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1;
+            margin: 0 0 30px 0;
+            letter-spacing: -2px;
+        }
+
+        /* --- FICHA TÉCNICA DEL MÉTODO --- */
+        .grid-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2px;
+            background: #222; /* El borde de las cajas */
+            border: 1px solid #222;
+            margin-top: 60px;
+        }
+
+        .info-card {
+            background: var(--dark);
+            padding: 40px;
+        }
+
+        .info-card h3 {
+            color: var(--neon);
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
+
+        .info-card p {
+            color: #888;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* --- LA TABLA (EL PRODUCTO) --- */
+        .preview-section {
+            margin-top: 100px;
+            padding: 40px;
+            background: var(--glass);
+            border-radius: 4px;
+            border: 1px solid #1a1a1a;
+        }
+
+        .zebra-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 0.95rem;
+        }
+
+        .zebra-table th {
+            text-align: left;
+            padding: 20px;
+            color: #555;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            border-bottom: 1px solid #222;
+        }
+
+        /* EL PRODUCTO: RAYADO DE CEBRA QUIRÚRGICO */
+        .zebra-table tbody tr:nth-child(even) {
+            background-color: rgba(57, 255, 20, 0.03); /* Brillo neón mínimo */
+        }
+
+        .zebra-table td {
+            padding: 25px 20px;
+            border-bottom: 1px solid #111;
+        }
+
+        .zebra-table tr:hover {
+            background-color: rgba(255, 255, 255, 0.05) !important;
+            cursor: crosshair;
+        }
+
+        .status-dot {
+            height: 8px;
+            width: 8px;
+            background-color: var(--neon);
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 10px;
+            box-shadow: 0 0 10px var(--neon);
+        }
+
+        /* --- BOTÓN DE CONTRATACIÓN --- */
+        .cta-footer {
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .btn-action {
+            background: var(--neon);
+            color: black;
+            padding: 25px 60px;
+            font-weight: 900;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .btn-action:hover {
+            box-shadow: 0 0 40px rgba(57, 255, 20, 0.6);
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <span class="hero-tag">Sistemas de visualización 2026</span>
+    <h1>Rayado de Cebra: <br>Precisión para Datos.</h1>
+
+    <div class="grid-info">
+        <div class="info-card">
+            <h3>La Ciencia</h3>
+            <p>El rayado de cebra reduce el "error de salto de línea" en un 38%. Utilizo algoritmos CSS de alternancia binaria para crear guías visuales que el ojo humano procesa sin esfuerzo.</p>
+        </div>
+        <div class="info-card">
+            <h3>El Material</h3>
+            <p>Código crudo, optimizado para latencia cero. Implementación pura sin librerías pesadas, garantizando una carga instantánea y un renderizado perfecto en cualquier pantalla.</p>
+        </div>
+        <div class="info-card">
+            <h3>Uso Crítico</h3>
+            <p>Diseñado para entornos de alta densidad informativa: terminales financieras, inventarios logísticos y paneles de control industrial donde un error de lectura no es una opción.</p>
+        </div>
+    </div>
+
+    <div class="preview-section">
+        <table class="zebra-table">
+            <thead>
+                <tr>
+                    <th>Protocolo de Datos</th>
+                    <th>Estado de Optimización</th>
+                    <th>Rendimiento Final</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Visualización de Balances</td>
+                    <td><span class="status-dot"></span>Activo</td>
+                    <td>99.9% Legibilidad</td>
+                </tr>
+                <tr>
+                    <td>Interacción UX Zebra</td>
+                    <td><span class="status-dot"></span>Optimizado</td>
+                    <td>Respuesta 0.0ms</td>
+                </tr>
+                <tr>
+                    <td>Estructura de Filas n-Child</td>
+                    <td><span class="status-dot"></span>Desplegado</td>
+                    <td>Error humano mitigado</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="cta-footer">
+        <a href="#" class="btn-action">Adquirir Implementación Pro</a>
+    </div>
+</div>
+
+</body>
+</html>

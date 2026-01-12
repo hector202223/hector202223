@@ -1,0 +1,120 @@
+:root {
+    --primary: #1e40af;       /* Azul intenso (no es negro) */
+    --accent: #0ea5e9;        /* Celeste vivo */
+    --side-bg: #1e3a8a;       /* Azul marino profundo para el sidebar */
+    --content-bg: #ffffff;    /* Fondo de contenido blanco */
+    --text-on-side: #e0e7ff;
+    --text-main: #1e293b;
+    --border-color: #e2e8f0;
+    --font: system-ui, -apple-system, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font);
+    background-color: var(--content-bg);
+    color: var(--text-main);
+}
+
+.main-layout {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    min-height: 100vh;
+}
+
+/* SIDEBAR: Color fuerte pero no negro */
+.sidebar {
+    background-color: var(--side-bg);
+    color: var(--text-on-side);
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    background: var(--accent);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+.sidebar h1 { font-size: 1.8rem; color: #fff; }
+.tagline { color: var(--accent); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+
+.about-me h3 { color: #fff; margin-bottom: 10px; font-size: 1.1rem; }
+.about-me p { font-size: 0.95rem; line-height: 1.6; opacity: 0.9; margin-bottom: 10px; }
+
+.nav-item {
+    display: block;
+    color: var(--text-on-side);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* CONTENIDO: Fondo Blanco */
+.content {
+    padding: 80px;
+    background-color: var(--content-bg);
+}
+
+.section-header h2 { font-size: 2.2rem; margin-bottom: 40px; color: var(--side-bg); }
+
+.project-list { display: flex; flex-direction: column; gap: 30px; }
+
+/* CARDS: Presentación Profesional */
+.project-card {
+    border: 2px solid var(--border-color);
+    border-radius: 20px;
+    padding: 30px;
+    transition: border-color 0.2s; /* Hover sin saltos */
+}
+
+.project-card:hover {
+    border-color: var(--accent);
+}
+
+.featured {
+    background-color: #f8fafc; /* Un toque de gris casi blanco para destacar */
+}
+
+.label { color: var(--primary); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; }
+.project-card h3 { font-size: 1.8rem; margin: 10px 0; color: var(--side-bg); }
+.project-card p { color: #475569; margin-bottom: 25px; line-height: 1.7; }
+
+/* BOTONES CON COLOR FUERTE */
+.project-actions { display: flex; gap: 15px; }
+
+.btn-main {
+    background-color: var(--primary);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-outline {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    padding: 12px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.secondary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}

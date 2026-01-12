@@ -1,0 +1,157 @@
+:root {
+    --bg-dark: #0f172a;
+    --panel-bg: #1e293b;
+    --accent: #f59e0b; /* Ambar/Naranja para que sea alegre */
+    --text-main: #f8fafc;
+    --text-dim: #94a3b8;
+    --card-blue: #3b82f6;
+    --font-stack: system-ui, -apple-system, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-stack);
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 20px;
+    width: 95vw;
+    height: 90vh;
+    max-width: 1400px;
+}
+
+/* --- PANEL DE PERFIL --- */
+.profile-panel {
+    background-color: var(--panel-bg);
+    border-radius: 24px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    background: var(--accent);
+    color: var(--bg-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 800;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.profile-panel h1 {
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+.badge {
+    color: var(--accent);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.bio {
+    color: var(--text-dim);
+    font-size: 1.1rem;
+}
+
+/* --- PANEL DE PROYECTOS --- */
+.content-panel {
+    background-color: #f1f5f9; /* Un gris muy claro para contraste total con el panel oscuro */
+    border-radius: 24px;
+    padding: 40px;
+    overflow-y: auto;
+    color: var(--bg-dark);
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+/* BENTO GRID */
+.bento-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+}
+
+.project-card {
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover { transform: translateY(-5px); }
+
+/* Card Destacada */
+.featured {
+    grid-column: 1 / -1;
+    background-color: var(--card-blue);
+    color: white;
+    min-height: 250px;
+}
+
+.card-tag {
+    background: rgba(255,255,255,0.2);
+    width: fit-content;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+}
+
+.featured h3 { font-size: 2.2rem; margin: 15px 0; }
+
+.card-footer {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn-view, .btn-code {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.btn-view { background: white; color: var(--card-blue); }
+.btn-code { border: 1px solid white; color: white; }
+
+/* Cards pequeñas */
+.basic { background: white; border: 1px solid #e2e8f0; }
+.dark { background: var(--bg-dark); color: white; }
+
+.arrow-link {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    align-self: flex-end;
+}

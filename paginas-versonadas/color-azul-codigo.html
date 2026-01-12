@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muestrario de Azules | Técnica de Intercalado</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #002147;
+            margin-bottom: 10px;
+        }
+
+        .descripcion {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #666;
+            text-align: center;
+            max-width: 600px;
+        }
+
+        /* Contenedor de la tabla */
+        .contenedor-tabla {
+            width: 100%;
+            max-width: 900px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1.1rem;
+        }
+
+        th {
+            background-color: #002147;
+            color: white;
+            padding: 20px;
+            text-align: left;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        td {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Visualización del color */
+        .color-preview {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: bold;
+        }
+
+        .muestra {
+            width: 60px;
+            height: 30px;
+            border-radius: 4px;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .hex-code {
+            font-family: 'Courier New', Courier, monospace;
+            background: #eee;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        /* --- TÉCNICA DE COLORES INTERCALADOS --- */
+        /* Usamos un azul muy claro (Azul Hielo) para las filas pares */
+        tbody tr:nth-child(even) {
+            background-color: #F0F8FF;
+        }
+
+        tbody tr:hover {
+            background-color: #e2e8f0;
+            transition: 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Catálogo de Azules Profesionales</h1>
+    <p class="descripcion">
+        Esta tabla utiliza la técnica de <strong>colores intercalados</strong> (fondo Azul Hielo) para mejorar la lectura de la paleta.
+    </p>
+
+    <div class="contenedor-tabla">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre del Color</th>
+                    <th>Código HEX</th>
+                    <th>Estilo y Uso Ideal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><div class="color-preview"><div class="muestra" style="background: #002366;"></div>Azul Royal</div></td>
+                    <td><span class="hex-code">#002366</span></td>
+                    <td>Clásico y corporativo.</td>
+                </tr>
+                <tr>
+                    <td><div class="color-preview"><div class="muestra" style="background: #0047AB;"></div>Azul Cobalto</div></td>
+                    <td><span class="hex-code">#0047AB</span></td>
+                    <td>Vibrante pero elegante.</td>
+                </tr>
+                <tr>
+                    <td><div class="color-preview"><div class="muestra" style="background: #4682B4;"></div>Azul Acero</div></td>
+                    <td><span class="hex-code">#4682B4</span></td>
+                    <td>Suave y moderno.</td>
+                </tr>
+                <tr>
+                    <td><div class="color-preview"><div class="muestra" style="background: #002147;"></div>Azul Oxford</div></td>
+                    <td><span class="hex-code">#002147</span></td>
+                    <td>Muy formal, ideal para finanzas.</td>
+                </tr>
+                <tr>
+                    <td><div class="color-preview"><div class="muestra" style="background: #2E5BFF;"></div>Azul Eléctrico Suave</div></td>
+                    <td><span class="hex-code">#2E5BFF</span></td>
+                    <td>Tecnológico y limpio.</td>
+                </tr>
+                <tr>
+                    <td><div class="color-preview"><div class="muestra" style="background: #005F6B;"></div>Azul Petróleo</div></td>
+                    <td><span class="hex-code">#005F6B</span></td>
+                    <td>Sofisticado y diferente.</td>
+                </tr>
+                <tr>
+                    <td><div class="color-preview"><div class="muestra" style="background: #1565C0;"></div>Azul Denim</div></td>
+                    <td><span class="hex-code">#1565C0</span></td>
+                    <td>Equilibrado para uso diario.</td>
+                </tr>
+                <tr>
+                    <td><div class="color-preview"><div class="muestra" style="background: #F0F8FF;"></div>Azul Hielo</div></td>
+                    <td><span class="hex-code">#F0F8FF</span></td>
+                    <td>Perfecto para el intercalado de filas.</td>
+                </tr>
+                <tr>
+                    <td><div class="color-preview"><div class="muestra" style="background: #191970;"></div>Azul Medianoche</div></td>
+                    <td><span class="hex-code">#191970</span></td>
+                    <td>Profundo y minimalista.</td>
+                </tr>
+                <tr>
+                    <td><div class="color-preview"><div class="muestra" style="background: #24292E;"></div>Azul Espacial</div></td>
+                    <td><span class="hex-code">#24292E</span></td>
+                    <td>El tono que usan plataformas como GitHub.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

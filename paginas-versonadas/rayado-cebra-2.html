@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas Profesionales | Colores Intercalados</title>
+    <style>
+        :root {
+            --intercalado: #f8fafc; /* Color suave para las filas pares */
+            --destaque: #002366;   /* Verde para resaltar puntos clave */
+            --texto: #1e293b;
+            --fondo: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: #f1f5f9;
+            color: var(--texto);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .ficha-producto {
+            background: var(--fondo);
+            max-width: 800px;
+            padding: 60px;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin: 0;
+            letter-spacing: -1px;
+        }
+
+        .metodo-tag {
+            display: inline-block;
+            background: var(--destaque);
+            padding: 5px 15px;
+            font-weight: bold;
+            border-radius: 8px;
+            margin-bottom: 15px;
+color:white;
+        }
+
+        /* --- EXPLICACIÓN DEL SERVICIO --- */
+        .detalles {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .columna h2 {
+            font-size: 1.5rem;
+            border-left: 4px solid var(--destaque);
+            padding-left: 15px;
+        }
+
+        .columna p {
+            font-size: 1.1rem;
+            color: #64748b;
+        }
+
+        /* --- LA TABLA: COLORES INTERCALADOS --- */
+        .tabla-intercalada {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1.2rem;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+
+        .tabla-intercalada th {
+            background-color: var(--texto);
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .tabla-intercalada td {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        /* TÉCNICA DE COLORES INTERCALADOS */
+        .tabla-intercalada tbody tr:nth-child(even) {
+            background-color: var(--intercalado);
+        }
+
+        .tabla-intercalada tbody tr:hover {
+            background-color: #f0fff4; /* Resalte muy suave al pasar el mouse */
+        }
+
+        /* --- LLAMADO A LA ACCIÓN --- */
+        .cta {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .boton {
+            background: var(--texto);
+            color: white;
+            padding: 20px 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .boton:hover {
+            background: #000;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 600px) {
+            .detalles { grid-template-columns: 1fr; }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="ficha-producto">
+    <header>
+        <span class="metodo-tag">ESTILO PROFESIONAL</span>
+        <h1>Tablas con rayado de cebra</h1>
+    </header>
+
+    <div class="detalles">
+        <div class="columna">
+            <h2>¿Qué es esta técnica?</h2>
+            <p>Es un sistema de diseño que aplica tonos diferenciados en cada fila. Esto genera un descanso visual que permite leer grandes bloques de información sin saltarse ninguna línea.</p>
+        </div>
+        <div class="columna">
+            <h2>Uso Perfecto</h2>
+            <p>Ideal para presentar listas de precios, inventarios o datos financieros. Es la forma más rápida de transformar datos planos en información profesional y fácil de entender.</p>
+        </div>
+    </div>
+
+    <table class="tabla-intercalada">
+        <thead>
+            <tr>
+                <th>Aplicación</th>
+                <th>Volumen de Datos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Inventarios de Productos</strong></td>
+                <td>Listados extensos</td>
+            </tr>
+            <tr>
+                <td><strong>Balances de Ventas</strong></td>
+                <td>Reportes mensuales</td>
+            </tr>
+            <tr>
+                <td><strong>Listas de Precios</strong></td>
+                <td>Catálogos para clientes</td>
+            </tr>
+            <tr>
+                <td><strong>Control de Logística</strong></td>
+                <td>Rutas y horarios</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="cta">
+        <a href="mailto:tu-correo@empresa.com" class="boton">Solicitar este Diseño</a>
+    </div>
+</div>
+
+</body>
+</html>

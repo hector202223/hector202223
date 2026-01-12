@@ -1,0 +1,152 @@
+/* --- VARIABLES --- */
+:root {
+    --accent: #6366f1;       /* Violeta eléctrico (alegre y moderno) */
+    --accent-light: #a5b4fc;
+    --bg: #ffffff;
+    --text: #1e293b;
+    --text-light: #64748b;
+    /* Fuente de sistema: Rápida y limpia */
+    --font-main: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text);
+    background-color: var(--bg);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- NAVEGACIÓN --- */
+.nav {
+    padding: 25px 0;
+}
+
+.nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: -1px;
+}
+
+.links a {
+    text-decoration: none;
+    color: var(--text);
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+.nav-cta {
+    background: var(--accent);
+    color: white !important;
+    padding: 8px 20px;
+    border-radius: 50px;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    padding: 80px 0;
+}
+
+.hero-flex {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, var(--accent), #f43f5e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-btns {
+    margin-top: 30px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.btn-main {
+    background: var(--accent);
+    color: white;
+    transition: transform 0.2s;
+}
+
+.btn-main:hover {
+    transform: translateY(-3px);
+}
+
+/* Forma dinámica para tu imagen */
+.profile-blob {
+    width: 280px;
+    height: 280px;
+    background: var(--accent-light);
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    animation: morph 8s ease-in-out infinite;
+    overflow: hidden;
+}
+
+@keyframes morph {
+    0%, 100% { border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%; }
+    50% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; }
+}
+
+/* --- PROYECTOS --- */
+.section { padding: 80px 0; }
+.section-title { margin-bottom: 40px; font-size: 2rem; }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 25px;
+    transition: border-color 0.3s;
+}
+
+.card:hover {
+    border-color: var(--accent);
+}
+
+.card h3 { margin-bottom: 10px; }
+.card p { color: var(--text-light); font-size: 0.95rem; }
+
+.card-links { margin-top: 20px; }
+.card-links a {
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: 600;
+    margin-right: 15px;
+}
